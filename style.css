@@ -241,6 +241,19 @@ a {
   color: black !important;
 }
 
+.slick-next:before, .slick-prev:before {
+  font-size: 25px;
+  color: #4169e1;
+  opacity:1;
+  left: -10px;
+}
+.slick-next{
+  right: -21px;
+}
+.slick-prev::before{
+  display: none;
+}
+
 .card-box {
   border: 2px solid black;
   padding: 20px;
@@ -282,7 +295,7 @@ a {
 }
 
 .card {
-  border-radius: 0;
+  border-radius: 8px;
 }
 
 @media only screen and (max-width: 907px) {
@@ -344,8 +357,9 @@ a {
   width: 80vw;
   margin-left: 3%;
   /* padding: 15px; */
+  line-height: 105%;
   justify-content: left;
-  padding: 25px;
+  padding:25px;
 }
 
 .card {
@@ -392,27 +406,95 @@ a {
   border-top: 2px solid rgb(245, 246, 250);
 }
 
+
+@media only screen and (min-width:910px) and (max-width:1125px){
+  .card{
+    width: 16vw !important;/*////*/
+  }
+  .card-title{
+    font-size: 18px;
+  }
+  .products{
+    font-size: 13px;
+    width: 84vw;
+  }
+  p{
+    text-align: -webkit-left;
+  }
+}
+
+@media only screen and (min-width:670px) and (max-width:910px){
+  .card{
+    width: 16vw !important;/*////*/
+  }
+  .products{
+    font-size: 13px;
+  }
+  p{
+    text-align: -webkit-left;
+  }
+}
+
+@media only screen and (min-width:381px) and (max-width:650px){
+  .card{
+    width: 25vw !important;/*////*/
+  }
+  .products{
+    font-size: 14px;
+  }
+  p{
+    font-size: 13px;
+  }
+  .h5, h5 {
+    font-size: 16px;
+  }
+  .sale{
+    padding: 0 !important;
+  }
+}
+
+@media only screen and (min-width:381px) and (max-width:580px){
+  .card{
+    width: 39vw !important;/*////*/
+  }
+  .products{
+    font-size: 14px;
+  }
+  p{
+    font-size: 13px;
+  }
+  .h5, h5 {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width:381px){
+  .card{
+    width: 59vw !important;
+    font-size: 1rem;
+  }
+  .h5, h5 {
+    font-size: 1rem;
+  }
+}
+
 @media only screen and (min-width: 637px) and (max-width: 1125px) {
-  .card {
-    width: 30vw !important;
-  }
   .sale {
     padding: 0 !important;
   }
 }
 
-@media only screen and (min-width: 381px) and (max-width: 637px) {
-  .card {
-    width: 50vw !important;
-  }
+@media only screen and (min-width: 650px) and (max-width: 910px) {
   .sale {
     padding: 0 !important;
   }
-}
-
-@media only screen and (max-width: 381px) {
-  .card {
-    width: 65vw !important;
+  .card{
+    width: 25vw !important;/*////*/
+  }
+  .products{
+    font-size: 12px;
+  }
+  p{
+    font-size: 15px;
   }
 }
 
