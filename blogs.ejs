@@ -30,28 +30,28 @@
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
                         <a href="/blogs"  data-bs-toggle="collapse" class="nav-link highlight align-middle px-0" style="color: white;">
-                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline side-text">Home</span>
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline side-text" id="sideText">Home</span>
                         </a>
                     </li>
                     <li>
                         <a href="#"  data-bs-toggle="collapse"  class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline side-text">Orders</span></a>
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline side-text" id="sideText">Orders</span></a>
                     </li>
                     <li>
                         <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline side-text">strap</span></a>
+                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline side-text" id="sideText">strap</span></a>
                         <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                             <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline side-text">Item</span> 1</a>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline side-text" id="sideText">Item</span> 1</a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline side-text">Item</span> 2</a>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline side-text" id="sideText">Item</span> 2</a>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline side-text">Products</span> </a>
+                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline " id="sideText">Products</span> </a>
                             <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                             <li class="w-100">
                                 <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline side-text">Product</span> 1</a>
@@ -659,7 +659,7 @@ $(function() {
 
 
 function openVideo() {
-  document.getElementById("video").style.display = "block";
+  document.getElementById("video").style.backgroundColor = "yellow";
 }
 
 function closeVideo() {
@@ -667,20 +667,22 @@ function closeVideo() {
 }
 
 var click=false;
-  var x = window.matchMedia("(max-width: 1220px)");
+  var x = window.matchMedia("(max-width: 1300px)");
   var y = window.matchMedia("(max-width: 490px)");
 function openNav() {
   if(click===false)
   {
     click=true;
+         
     if(x.matches){
         document.getElementById("sidebar").style.display = "none";
+  
 
       
 
     }
-    
     else{
+            document.getElementById('sideText').style.marginLeft = '20px';
       
       document.getElementById("sidebar").style.width = "12vw";
     

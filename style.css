@@ -667,6 +667,13 @@ a {
     margin-top: -80px;
     margin-bottom: -49px;
   }
+
+  .greeting h2 {
+    font-size: 18px;
+  }
+  .greeting p {
+    font-size: 16px;
+  }
 }
 
 .feed__inputContainer {
@@ -730,14 +737,6 @@ a {
 .event-form {
   max-width: 60%;
 }
-@media only screen and (max-width: 420px) {
-  .greeting h2 {
-    font-size: 18px;
-  }
-  .greeting p {
-    font-size: 16px;
-  }
-}
 
 @media only screen and (max-width: 380px) {
   .navinternal {
@@ -746,6 +745,7 @@ a {
 
   .greetingImage img {
     width: auto;
+    margin: 10px;
   }
   .greetingImage {
     margin-left: 20px;
