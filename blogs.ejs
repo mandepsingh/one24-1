@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+   
+
+
+    <title>Blogs Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="https://use.fontawesome.com/164df0050f.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css">
+
+
+  </head>
+<body style="overflow-x: hidden;">
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark" id="sidebar">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <!-- <span class="fs-5 d-none d-sm-inline">Menu</span> -->
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="/blogs"  data-bs-toggle="collapse" class="nav-link highlight align-middle px-0" style="color: white;">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline side-text" id="sideText">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"  data-bs-toggle="collapse"  class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline side-text" id="sideText">Orders</span></a>
+                    </li>
+                    <li>
+                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline side-text" id="sideText">strap</span></a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline side-text" id="sideText">Item</span> 1</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline side-text" id="sideText">Item</span> 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline " id="sideText">Products</span> </a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline side-text">Product</span> 1</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline side-text">Product</span> 2</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline side-text">Product</span> 3</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline side-text">Product</span> 4</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li>
+                        <a href="#" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
+                    </li> -->
+                </ul>
+                <hr>
+                <!-- <div class="dropdown pb-4">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                        <span class="d-none d-sm-inline mx-1">loser</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+        <div class="col py-3 content" id="main">
+          
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: white !important;">
+              <div class="container-fluid navinternal">
+                <i class="fa fa-bars" onclick="openNav()" style="margin: 10px;"></i>
+                <a class="navbar-brand" href="#"><i class="bi bi-plus-circle-fill"></i></a>
+            
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                  aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="background-color: white;">
+                  <form class="d-flex">
+                    <input class="form-control me-2"
+                      style="font-family: FontAwesome; border:none; width: 300px; background-color: rgb(245, 246, 250);"
+                      type="search" placeholder=" &#xf002;  Search" aria-label="Search">
+                  </form>
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-question-circle"></i></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="bi bi-app-indicator"></i></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " style="color: black !important;" href="#"><b>Hi! <%= blogger.name %></b></a>
+                    </li>
+                  </ul>
+            
+                </div>
+              </div>
+            </nav>
+
+           
+         
+          
+          <div class="blogs ">
+            <div class="feed">
+              <div class="feed__inputContainer">
+                <div class="feed__input">
+                  <i class="material-icons"> create </i>
+                  <form>
+                    <input type="text" class="inputForm"/>
+                    <button type="submit">Send</button>
+                  </form>
+                </div>
+                <div class="feed__inputOptions">
+                  <form method="POST" action="/blogger/imageUpload">
+                    <!-- <input name="imgFile" type="file" multiple id="imgupload" style="display:none"/> -->
+                  </form> 
+                  <div class="inputOption" id="OpenImgUpload" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i style="color: #70b5f9" class="material-icons"> insert_photo </i>
+                    <h4>Photo</h4>
+                  </div>
+                  <div class="inputOption" id="OpenVideoUpload"  data-bs-toggle="modal" data-bs-target="#exampleModal2" >
+                    <i style="color: #26e440; font-size:1.5rem" class="bi bi-youtube"></i>
+                    <h4>Video</h4>
+                  </div>
+                  <div class="inputOption"   data-bs-toggle="modal" data-bs-target="#exampleModal3" >
+                    <i style="color: rgb(250, 193, 87)" class="material-icons"> event_note </i>
+                    <h4>Event</h4>
+                  </div>
+                  <a href="/blogs/create" style="text-decoration: none;" class="inputOption">
+                    <!-- <div class="inputOption"> -->
+                      <i style="color: rgb(236, 128, 128)" class="material-icons"> calendar_view_day </i>
+                      <h4>Write Article</h4>
+                    <!-- </div> -->
+                 </a>
+                </div>
+              </div>
+              </div>
+              
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Edit your photo </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner" id="abc">
+
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      <form method="POST" action="/blogs/imageUpload" enctype="multipart/form-data" style="display: inline-block;">
+                        <input name="imgFile" type="file" id="imgupload" style="display: none;"  multiple />
+                        <button type="submit" class="btn btn-primary">Done</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Select your video</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                          <div class="video-inner" id="def">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <form method="POST" action="/blogs/videoUpload" enctype="multipart/form-data" style="display: inline-block;">
+                          <input name="videoFile" type="file" id="videoupload"  hidden/>
+                          <button type="submit" class="btn btn-primary">Done</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog event-form">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Create event</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form method="POST" action="/blogs/create-event">
+                          <div class="mb-3">
+                            <label for="event" class="form-label">Event Name*</label>
+                            <input type="text" name="event" class="form-control" id="event" aria-describedby="event" required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="timezone" class="form-label">Timezone*</label>
+                            <select class="form-select" name="timezone" aria-label="Default select example" required>
+                              <option value="-12">(UTC-12:00) International Date Line West</option>
+                                <option value="-11">(UTC-11:00) Coordinated Universal Time-11</option>
+                                <option value="-10">(UTC-10:00) Hawaii</option>
+                                <option value="-8">(UTC-09:00) Alaska</option>
+                                <option value="-7">(UTC-08:00) Baja California</option>
+                                <option value="-7">(UTC-07:00) Pacific Time (US &amp; Canada)</option>
+                                <option value="-8">(UTC-08:00) Pacific Time (US &amp; Canada)</option>
+                                <option value="-7">(UTC-07:00) Arizona</option>
+                                <option value="-6">(UTC-07:00) Chihuahua, La Paz, Mazatlan</option>
+                                <option value="-6">(UTC-07:00) Mountain Time (US &amp; Canada)</option>
+                                <option value="-6">(UTC-06:00) Central America</option>
+                                <option value="-5">(UTC-06:00) Central Time (US &amp; Canada)</option>
+                                <option value="-5">(UTC-06:00) Guadalajara, Mexico City, Monterrey</option>
+                                <option value="-6">(UTC-06:00) Saskatchewan</option>
+                                <option value="-5">(UTC-05:00) Bogota, Lima, Quito</option>
+                                <option value="-4">(UTC-05:00) Eastern Time (US &amp; Canada)</option>
+                                <option value="-4">(UTC-05:00) Indiana (East)</option>
+                                <option value="-4.5">(UTC-04:30) Caracas</option>
+                                <option value="-4">(UTC-04:00) Asuncion</option>
+                                <option value="-3">(UTC-04:00) Atlantic Time (Canada)</option>
+                                <option value="-4">(UTC-04:00) Cuiaba</option>
+                                <option value="-4">(UTC-04:00) Georgetown, La Paz, Manaus, San Juan</option>
+                                <option value="-4">(UTC-04:00) Santiago</option>
+                                <option value="-2.5">(UTC-03:30) Newfoundland</option>
+                                <option value="-3">(UTC-03:00) Brasilia</option>
+                                <option value="-3">(UTC-03:00) Buenos Aires</option>
+                                <option value="-3">(UTC-03:00) Cayenne, Fortaleza</option>
+                                <option value="-3">(UTC-03:00) Greenland</option>
+                                <option value="-3">(UTC-03:00) Montevideo</option>
+                                <option value="-3">(UTC-03:00) Salvador</option>
+                                <option value="-2">(UTC-02:00) Coordinated Universal Time-02</option>
+                                <option value="-1">(UTC-02:00) Mid-Atlantic - Old</option>
+                                <option value="0">(UTC-01:00) Azores</option>
+                                <option value="-1">(UTC-01:00) Cape Verde Is.</option>
+                                <option value="1">(UTC) Casablanca</option>
+                                <option value="0">(UTC) Coordinated Universal Time</option>
+                                <option value="0">(UTC) Edinburgh, London</option>
+                                <option value="1">(UTC+01:00) Edinburgh, London</option>
+                                <option value="1">(UTC) Dublin, Lisbon</option>
+                                <option value="0">(UTC) Monrovia, Reykjavik</option>
+                                <option value="2">(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option>
+                                <option value="2">(UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option>
+                                <option value="2">(UTC+01:00) Brussels, Copenhagen, Madrid, Paris</option>
+                                <option value="2">(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</option>
+                                <option value="1">(UTC+01:00) West Central Africa</option>
+                                <option value="1">(UTC+01:00) Windhoek</option>
+                                <option value="3">(UTC+02:00) Athens, Bucharest</option>
+                                <option value="3">(UTC+02:00) Beirut</option>
+                                <option value="2">(UTC+02:00) Cairo</option>
+                                <option value="3">(UTC+02:00) Damascus</option>
+                                <option value="3">(UTC+02:00) E. Europe</option>
+                                <option value="2">(UTC+02:00) Harare, Pretoria</option>
+                                <option value="3">(UTC+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option>
+                                <option value="3">(UTC+03:00) Istanbul</option>
+                                <option value="3">(UTC+02:00) Jerusalem</option>
+                                <option value="2">(UTC+02:00) Tripoli</option>
+                                <option value="3">(UTC+03:00) Amman</option>
+                                <option value="3">(UTC+03:00) Baghdad</option>
+                                <option value="3">(UTC+02:00) Kaliningrad</option>
+                                <option value="3">(UTC+03:00) Kuwait, Riyadh</option>
+                                <option value="3">(UTC+03:00) Nairobi</option>
+                                <option value="3">(UTC+03:00) Moscow, St. Petersburg, Volgograd, Minsk</option>
+                                <option value="4">(UTC+04:00) Samara, Ulyanovsk, Saratov</option>
+                                <option value="4.5">(UTC+03:30) Tehran</option>
+                                <option value="4">(UTC+04:00) Abu Dhabi, Muscat</option>
+                                <option value="5">(UTC+04:00) Baku</option>
+                                <option value="4">(UTC+04:00) Port Louis</option>
+                                <option value="4">(UTC+04:00) Tbilisi</option>
+                                <option value="4">(UTC+04:00) Yerevan</option>
+                                <option value="4.5">(UTC+04:30) Kabul</option>
+                                <option value="5">(UTC+05:00) Ashgabat, Tashkent</option>
+                                <option value="5">(UTC+05:00) Yekaterinburg</option>
+                                <option value="5">(UTC+05:00) Islamabad, Karachi</option>
+                                <option value="5.5" selected>(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi</option>
+                                <option value="5.5">(UTC+05:30) Sri Jayawardenepura</option>
+                                <option value="5.75">(UTC+05:45) Kathmandu</option>
+                                <option value="6">(UTC+06:00) Nur-Sultan (Astana)</option>
+                                <option value="6">(UTC+06:00) Dhaka</option>
+                                <option value="6.5">(UTC+06:30) Yangon (Rangoon)</option>
+                                <option value="7">(UTC+07:00) Bangkok, Hanoi, Jakarta</option>
+                                <option value="7">(UTC+07:00) Novosibirsk</option>
+                                <option value="8">(UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi</option>
+                                <option value="8">(UTC+08:00) Krasnoyarsk</option>
+                                <option value="8">(UTC+08:00) Kuala Lumpur, Singapore</option>
+                                <option value="8">(UTC+08:00) Perth</option>
+                                <option value="8">(UTC+08:00) Taipei</option>
+                                <option value="8">(UTC+08:00) Ulaanbaatar</option>
+                                <option value="8">(UTC+08:00) Irkutsk</option>
+                                <option value="9">(UTC+09:00) Osaka, Sapporo, Tokyo</option>
+                                <option value="9">(UTC+09:00) Seoul</option>
+                                <option value="9.5">(UTC+09:30) Adelaide</option>
+                                <option value="9.5">(UTC+09:30) Darwin</option>
+                                <option value="10">(UTC+10:00) Brisbane</option>
+                                <option value="10">(UTC+10:00) Canberra, Melbourne, Sydney</option>
+                                <option value="10">(UTC+10:00) Guam, Port Moresby</option>
+                                <option value="10">(UTC+10:00) Hobart</option>
+                                <option value="9">(UTC+09:00) Yakutsk</option>
+                                <option value="11">(UTC+11:00) Solomon Is., New Caledonia</option>
+                                <option value="11">(UTC+11:00) Vladivostok</option>
+                                <option value="12">(UTC+12:00) Auckland, Wellington</option>
+                                <option value="12">(UTC+12:00) Coordinated Universal Time+12</option>
+                                <option value="12">(UTC+12:00) Fiji</option>
+                                <option value="12">(UTC+12:00) Magadan</option>
+                                <option value="13">(UTC+12:00) Petropavlovsk-Kamchatsky - Old</option>
+                                <option value="13">(UTC+13:00) Nuku'alofa</option>
+                                <option value="13">(UTC+13:00) Samoa</option>
+                            </select>
+                          </div>
+                          <div class="mb-3">
+                            <label for="sDate" class="input_lable">Start Date</label>
+                            <input type="date" class="form-control" name="sDate" id="sDate"  />
+                          </div>
+                          <div class="mb-3">
+                            <label for="sTime" class="input_lable">Start Time*</label>
+                            <input type="time" class="form-control" id="sTime" name="sTime" required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="eDate" class="input_lable">End Date</label>
+                            <input type="date" class="form-control" name="eDate" id="eDate"  />
+                          </div>
+                          <div class="mb-3">
+                            <label for="eTime" class="input_lable">End Time*</label>
+                            <input type="time" class="form-control" id="eTime" name="eTime" required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Description*</label>
+                            <textarea class="form-control" name="description" placeholder="Ex: Topics, Schedule, etc." id="exampleFormControlTextarea1" rows="3" required></textarea>
+                          </div>
+                          <div class="mb-3">
+                            <label for="speakers" class="form-label">Speakers*</label>
+                            <input type="text" name="speakers" class="form-control" id="speakers" aria-describedby="speakers" required>
+                          </div>
+                          <label>Settings</label>
+                          <div class="form-text">Event settings can’t be changed once the event is created. </div><br>
+                          <div class="mb-3">
+                            <label for="visibility" class="form-label">Visibility</label>
+                            <select id="mode" name="visibility" class="form-select" aria-label="Default select example">
+                              <option value="public" selected>Public event</option>
+                              <option value="private">Private event</option>
+                            </select>
+                          </div>
+                          <div class="mb-3 public">
+                            <div class="form-text">Visible to anyone on LinkedIn. Anyone can choose to attend.</div><br>
+                          </div>
+                          <div class="mb-3 private">
+                            <div class="form-text">Visible to invitees and anyone else with the event link. Non-invitees need your approval to attend.</div><br>
+                            <div class="form-check">
+                              <input class="form-check-input" name="allowance" type="checkbox" value="true" id="flexCheckChecked" checked>
+                              <label class="form-check-label" for="flexCheckChecked">
+                                <div class="form-text">Allow attendees to invite their connections.
+                                  The people they invite will not need your approval to attend</div>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="mb-3">
+                            <label for="location" class="form-label">Location</label>
+                            <div class="form-check">
+                              <input name="location" class="form-check-input online" type="checkbox" value="online" id="flexChecChecked">
+                              <label class="form-check-label" for="flexCheckChecked">
+                                This is an online event
+                              </label>
+                            </div>
+                          </div>
+                          <div class="mb-3" id="offline1">
+                            <label for="speakers" class="form-label">Address*</label>
+                            <input type="text" name="address" placeholder="E.g., street, city, pincode, etc." class="form-control" id="address" aria-describedby="address">
+                          </div>
+                          <div class="mb-3" id="offline2">
+                            <label for="speakers" class="form-label">Venue</label>
+                            <input type="text" name="venue" placeholder="E.g., floor no, room no, etc." class="form-control" id="venue" aria-describedby="venue">
+                          </div>
+                          <div class="mb-3">
+                            <label for="link" class="form-label">Registration or broadcast link</label>
+                            <input type="text" name="link" class="form-control" id="link" aria-describedby="link">
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" name="broadcast" type="checkbox" value="true" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                              This is a broadcast link
+                            </label>
+                          </div>
+                          <!-- <button type="submit" class="btn btn-primary">Create</button> -->
+                          <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Create</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                
+            <div class="greeting">
+                <h2 style="font-family: 'Roboto', sans-serif; display: inline-block">Hi Gleb,</h2> 
+                <h2 style="font-family: 'Roboto', sans-serif; color: blueviolet; display: inline-block;"><i> Good morning</i></h2>
+                <p style="font-family: 'Roboto', sans-serif; color: gray;">Here is what is happenning<br> with your store today</p>
+            </div>
+            <div class="greetingImage">
+                <img src="https://st2.depositphotos.com/2935785/10783/v/950/depositphotos_107836458-stock-illustration-hipster-young-man-drinking-coffee.jpg">
+            </div>
+            <div class="updates">
+                <div class="card-group">
+                    <div class="card">
+                      <div class="card-body" style="padding: 20px; color: gray;">
+                          <span style="font-size: 20px; color:rgb(28,211,141);"><b>$24,763</b></span>
+                          <span style=" font-size:12px; float: right; color: rgb(28,211,141);"><b>^12%</b></span>
+                        <p class="card-text"  style=" font-size:12px; "><b>Today's sale</b> </p>
+                        
+                      </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body" style="padding: 20px; color: gray;">
+                            <span style="font-size: 20px; color: blueviolet;"><b>$24,763</b></span>
+                            <span style=" font-size:12px; float: right; color: blueviolet;"><b>^12%</b></span>
+                          <p class="card-text"  style=" font-size:12px; "><b>Today's sale</b> </p>
+                          
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-body" style="padding: 20px; color: gray;">
+                            <span style="font-size: 20px; color: rgb(247, 88, 88);"><b>$24,763</b></span>
+                            <span style=" font-size:12px; float: right; color: rgb(247, 88, 88);"><b>^12%</b></span>
+                          <p class="card-text"  style=" font-size:12px; "><b>Today's sale</b> </p>
+                          
+                        </div>
+                      </div>
+                  </div>
+            </div>
+            <div class="overview ">
+                <h3>Last week overview</h3>
+                <span style="font-size: 20px; color: blueviolet;"><b>$24,763</b></span>
+                <span style=" font-size:12px; color: blueviolet;"><b>^12%</b></span>
+                <span style="font-size: 20px; float:right; color: rgb(28,211,141);"><b>$1269</b></span>
+                <span style=" font-size:12px; float:right;padding-right: 5px; padding-top: 10px ;color:rgb(28,211,141);"><b>^12% </b></span><br><br><br>
+                <div>
+                    <canvas id="lineChart" style="width: 0.8em;"></canvas>
+                </div>
+            </div>
+            <div class="visitors">
+                <h3 style="display: inline-block;">Last week visitor</h3>
+                <span style="font-size: 20px; float: right;"><b>24,763</b></span>
+                <div>
+                    <canvas id="barChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="products">
+              <h3 style="text-align: left;">Top selling products</h3>
+              <div class="slider">
+                      <div class="card">
+                        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBnWgzD4kMKrT-MhPnIeE63-P0I-6YseNueg&usqp=CAU" alt="Card image cap" style="margin: auto;padding:20px 0 20px 0">
+                        <div class="card-body" style="padding: 0;">
+                          <h5 class="card-title" style="padding-left: 20px;">The c1lassical watch</h5><b>
+                            <div style="margin-right:-3px; display: inline-block;width: 50%; border-top: 2px solid gainsboro; border-right: 2px solid gainsboro;">
+                              <p style="color:gray;padding-left: 20px; padding-top: 10px; margin-bottom: 3px;">Price</p>
+                              <p style="color:rgb(28,211,141);padding-left:20px; padding-bottom: 4px;">$942</p>
+                            </div>
+                            <div style="margin-left:-3px;display: inline-block;width: 50%; border-top: 2px solid gainsboro; border-left: 2px solid gainsboro;">
+                              <p style="color:gray;padding-left: 20px; padding-top: 10px; margin-bottom: 3px;">Total Sale</p>
+                              <p style="padding-left:20px; padding-bottom: 4px;">$942</p></b>
+                          </div>
+                        </div>
+                      </div>
+                <div class="card">
+                  <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBnWgzD4kMKrT-MhPnIeE63-P0I-6YseNueg&usqp=CAU" alt="Card image cap" style="margin: auto;;padding:20px 0 20px 0">
+                  <div class="card-body" style="padding: 0;">
+                    <h5 class="card-title" style="padding-left: 20px;">The c2lassical watch</h5><b>
+                      <div style="margin-right:-3px; display: inline-block;width: 50%; border-top: 2px solid gainsboro; border-right: 2px solid gainsboro;">
+                        <p style="color:gray;padding-left: 20px; padding-top: 10px; margin-bottom: 3px;">Price</p>
+                        <p style="color:rgb(28,211,141);padding-left:20px; padding-bottom: 4px;">$942</p>
+                      </div>
+                      <div style="margin-left:-3px;display: inline-block;width: 50%; border-top: 2px solid gainsboro; border-left: 2px solid gainsboro;">
+                        <p style="color:gray;padding-left: 20px; padding-top: 10px; margin-bottom: 3px;">Total Sale</p>
+                        <p style="padding-left:20px; padding-bottom: 4px;">$942</p></b>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBnWgzD4kMKrT-MhPnIeE63-P0I-6YseNueg&usqp=CAU" alt="Card image cap" style="margin: auto;;padding:20px 0 20px 0">
+                  <div class="card-body" style="padding: 0;">
+                    <h5 class="card-title" style="padding-left: 20px;">The c3lassical watch</h5><b>
+                      <div style="margin-right:-3px; display: inline-block;width: 50%; border-top: 2px solid gainsboro; border-right: 2px solid gainsboro;">
+                        <p style="color:gray;padding-left: 20px; padding-top: 10px; margin-bottom: 3px;">Price</p>
+                        <p style="color:rgb(28,211,141);padding-left:20px; padding-bottom: 4px;">$942</p>
+                      </div>
+                      <div style="margin-left:-3px;display: inline-block;width: 50%; border-top: 2px solid gainsboro; border-left: 2px solid gainsboro;">
+                        <p style="color:gray;padding-left: 20px; padding-top: 10px; margin-bottom: 3px;">Total Sale</p>
+                        <p style="padding-left:20px; padding-bottom: 4px;">$942</p></b>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBnWgzD4kMKrT-MhPnIeE63-P0I-6YseNueg&usqp=CAU" alt="Card image cap" style="margin: auto;;padding:20px 0 20px 0">
+                  <div class="card-body" style="padding: 0;">
+                    <h5 class="card-title" style="padding-left: 20px;">The c4lassical watch</h5><b>
+                      <div style="margin-right:-3px; display: inline-block;width: 50%; border-top: 2px solid gainsboro; border-right: 2px solid gainsboro;">
+                        <p style="color:gray;padding-left: 20px; padding-top: 10px; margin-bottom: 3px;">Price</p>
+                        <p style="color:rgb(28,211,141);padding-left:20px; padding-bottom: 4px;">$942</p>
+                      </div>
+                      <div style="margin-left:-3px;display: inline-block;width: 50%; border-top: 2px solid gainsboro; border-left: 2px solid gainsboro;">
+                        <p style="color:gray;padding-left: 20px; padding-top: 10px; margin-bottom: 3px;">Total Sale</p>
+                        <p style="padding-left:20px; padding-bottom: 4px;">$942</p></b>
+                    </div>
+                  </div>
+                </div>
+                  <div class="card">
+                    <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBnWgzD4kMKrT-MhPnIeE63-P0I-6YseNueg&usqp=CAU" alt="Card image cap" style="margin: auto;;padding:20px 0 20px 0">
+                    <div class="card-body" style="padding: 0;">
+                      <h5 class="card-title" style="padding-left: 20px;">The c4lassical watch</h5><b>
+                        <div style="margin-right:-3px; display: inline-block;width: 50%; border-top: 2px solid gainsboro; border-right: 2px solid gainsboro;">
+                          <p style="color:gray;padding-left: 20px; padding-top: 10px; margin-bottom: 3px;">Price</p>
+                          <p style="color:rgb(28,211,141);padding-left:20px; padding-bottom: 4px;">$942</p>
+                        </div>
+                        <div style="margin-left:-3px;display: inline-block;width: 50%; border-top: 2px solid gainsboro; border-left: 2px solid gainsboro;">
+                          <p style="color:gray;padding-left: 20px; padding-top: 10px; margin-bottom: 3px;">Total Sale</p>
+                          <p style="padding-left:20px; padding-bottom: 4px;">$942</p></b>
+                      </div>
+                    </div>
+                  </div>
+                    <div class="card">
+                      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBnWgzD4kMKrT-MhPnIeE63-P0I-6YseNueg&usqp=CAU" alt="Card image cap" style="margin: auto;;padding:20px 0 20px 0">
+                      <div class="card-body" style="padding: 0;">
+                        <h5 class="card-title" style="padding-left: 20px;">The c4lassical watch</h5><b>
+                          <div style="margin-right:-3px; display: inline-block;width: 50%; border-top: 2px solid gainsboro; border-right: 2px solid gainsboro;">
+                            <p style="color:gray;padding-left: 20px; padding-top: 10px; margin-bottom: 3px;">Price</p>
+                            <p style="color:rgb(28,211,141);padding-left:20px; padding-bottom: 4px;">$942</p>
+                          </div>
+                          <div style="margin-left:-3px;display: inline-block;width: 50%; border-top: 2px solid gainsboro; border-left: 2px solid gainsboro;">
+                            <p style="color:gray;padding-left: 20px; padding-top: 10px; margin-bottom: 3px;">Total Sale</p>
+                            <p style="padding-left:20px; padding-bottom: 4px;">$942</p></b>
+                        </div>
+                      </div>
+                  </div>
+              </div>  
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+ 
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+  <!-- <script src="js/carousel.js"></script> -->
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    // Multiple images preview in browser
+    var imagesPreview = function(input, placeToInsertImagePreview) {
+        if (input.files) {
+            var filesAmount = input.files.length;
+            var first=true;
+            for (var i=0; i < filesAmount;i++) {
+                var reader = new FileReader();
+                reader.onload = function(event) {
+                  var divi = document.createElement('div');
+                  var img = document.createElement('img');
+                  img.src = event.target.result;
+                  img.setAttribute('class','d-block w-100');
+                  divi.appendChild(img);
+                  if(first===true)
+                  {
+                    divi.setAttribute("class","carousel-item active");
+                    first=false;
+                  }
+                  else
+                  {
+                    divi.setAttribute("class","carousel-item");
+                  }
+                  document.getElementById("abc").appendChild(divi);
+                }
+                reader.readAsDataURL(input.files[i]);
+            }
+        }
+    };
+    $('#imgupload').on('change', function() {
+        imagesPreview(this, 'div.carousel-inner');
+    });
+});
+$(function() {
+    // Multiple images preview in browser
+    var videoPreview = function(input, placeToInsertImagePreview) {
+        if (input.files) {
+            var filesAmount = input.files.length;
+            var first=true;
+            // for (var i=0; i < filesAmount;i++) {
+                var reader = new FileReader();
+                reader.onload = function(event) {
+                  var divi = document.createElement('div');
+                  var video = document.createElement('VIDEO');
+                  video.src = event.target.result;
+                  video.setAttribute('class','d-block w-100');
+                  divi.appendChild(video);
+                  // if(first===true)
+                  // {
+                    // divi.setAttribute("class","carousel-item active");
+                  //   first=false;
+                  // }
+                  // else
+                  // {
+                  //   divi.setAttribute("class","carousel-item");
+                  // }
+                  document.getElementById("def").appendChild(divi);
+                }
+                reader.readAsDataURL(input.files[0]);
+            // }
+        }
+    };
+    $('#videoupload').on('change', function() {
+        videoPreview(this, 'div.video-inner');
+    });
+});
+function openVideo() {
+  document.getElementById("video").style.backgroundColor = "yellow";
+}
+function closeVideo() {
+  document.getElementById("video").style.display = "none";
+}
+var click=false;
+  var x = window.matchMedia("(max-width: 1300px)");
+  var y = window.matchMedia("(max-width: 490px)");
+function openNav() {
+  if(click===false)
+  {
+    click=true;
+         
+    if(x.matches){
+        document.getElementById("sidebar").style.display = "none";
+  
+      
+    }
+    else{
+            document.getElementById('sideText').style.marginLeft = '20px';
+      
+      document.getElementById("sidebar").style.width = "12vw";
+    
+      document.getElementById("main").style.marginLeft = "-8vw";
+    }
+  }
+  else
+  {
+    click=false;
+    document.getElementById("sidebar").style.display = "block";
+    document.getElementById("sidebar").style.width = "13vw";
+    document.getElementById("main").style.marginLeft = "0px";
+  } 
+}
+function closeNav() {
+ 
+}
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+$(document).ready(function(){
+  
+  $("#mode").click( function() {
+    var e=document.getElementById("mode").value;
+    if(e==="public")
+    {
+      $(".public").show();
+      $(".private").hide();
+    }
+    else
+    {
+      $(".public").hide();
+      $(".private").show();
+    }
+  });
+  $("#flexChecChecked").click( function() {
+    if($("#flexChecChecked").is(":checked"))
+    {
+      $("#offline1").hide();
+      $("#offline2").hide();
+    }
+    else
+    {
+      $("#offline1").show();
+      $("#offline2").show();
+  }
+});
+  
+  $('#OpenImgUpload').click(function(){ $('#imgupload').trigger('click'); });
+  $('#OpenVideoUpload').click(function(){ $('#videoupload').trigger('click'); });
+ 
+    $('.slider').slick({
+      arrows:true,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 2,
+  responsive: [
+    {
+      // breakpoint: 1024,
+      // settings: {
+      //   slidesToShow: 3,
+      //   slidesToScroll: 3,
+      //   infinite: true,
+      //   // dots: true
+      // }
+    },
+    {
+      breakpoint: 1125,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 637,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    },
+    
+    {
+      breakpoint: 320,
+      settings: {
+        slidesToShow: 0,
+        slidesToScroll: 0
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+    });
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+   <script src="/js/chart.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+   <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+
+</body>
+</html>
